@@ -24,6 +24,9 @@ div#posts {
 	border-width: 2px;
 	border-color: #ab491c;
 	border-style: solid;
+	width: 60%;
+	margin-left: 20%;
+	margin-right: 20%;
 }
 
 div.main {
@@ -35,6 +38,8 @@ div.main {
 div.header {
 	font-size:24px;
 	font-weight: bold;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 div.content {
@@ -54,6 +59,8 @@ div.date {
 div.footer {
 	font-size:13px;
 	color:#ddd;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 div.footer a {
@@ -63,4 +70,12 @@ div.footer a {
 
 div.footer a:hover {
 	text-decoration: underline;
+}
+
+@media (max-aspect-ratio: 1/1), (max-width: 700px) {
+	/* For responsive design*/
+	div#posts {
+		width: initial;
+		margin: initial;
+	}
 }
