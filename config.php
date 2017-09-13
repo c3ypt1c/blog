@@ -1,5 +1,5 @@
 <?php
 
-$title= "title";
+$title= "Title";
 
 ?>
