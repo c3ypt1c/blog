@@ -8,6 +8,7 @@ fd= f.read().decode(config.enc.default)
 f.close()
 
 fd = fd.split("\n")
+fd.reverse()
 html = "<div id='posts'>"
 
 for x in fd:

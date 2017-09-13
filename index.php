@@ -10,7 +10,7 @@
 
 <div class='title'><h1><?php echo $title;?></h1></div>
 
-<?php echo (string)exec("python getter.py");?>
+<?php echo (string)exec("python3 getter.py");?>
 
 <div class="footer">
 	<p> Attribution: <a href="http://www.vincenzovuono.com/">Vincenzo Vuono</a> for Gravity Font.<br>
