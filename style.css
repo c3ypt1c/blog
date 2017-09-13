@@ -1,14 +1,20 @@
+@font-face {
+	font-family: "Gravity Book";
+	src: url("Gravity-Book.otf");
+}
+
 body {
-	background-color: #f93;
+	background: #f93;
+	background: linear-gradient(#f93, #f93, #f93, #f93, black);
 	text-align: center;
+	font-family: "Gravity Book";
 }
 
 div.title {
 	text-transform: capitalize;
 	width:66%;
-	height: 40px;
-	background-color: hsla();
-	padding: auto;
+	font-size: 20px;
+	padding-bottom: 20px;
 	margin: auto;
 }
 
@@ -20,8 +26,19 @@ div#posts {
 	border-style: solid;
 }
 
+div.main {
+	text-align: left;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+div.header {
+	font-size:24px;
+	font-weight: bold;
+}
+
 div.content {
-	
+	margin: 20px;
 	background-color: #ddd;
 	border-radius: 5px;
 	border-width: 2px;
@@ -30,6 +47,20 @@ div.content {
 }
 
 div.date {
-	color:#444;
+	color:#666;
 	font-size:10px;
+}
+
+div.footer {
+	font-size:13px;
+	color:#ddd;
+}
+
+div.footer a {
+	color: #fff;
+	text-decoration: none;
+}
+
+div.footer a:hover {
+	text-decoration: underline;
 }

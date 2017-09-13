@@ -1,5 +1,5 @@
 <?php
 
-$title= "Title";
+$title= "PressWord Blog";
 
 ?>
