@@ -12,11 +12,12 @@
 
 <?php echo (string)exec("python3 getter.py");?>
 
-<div class="footer">
-	<p> Attribution: <a href="http://www.vincenzovuono.com/">Vincenzo Vuono</a> for Gravity Font.<br>
-		Website licensed under <a href="">CC0 1.0 Universal</a><br>
-	</p>
-</div>
+<?php 
+$fn = getcwd()."/footer.html";
+$f = fopen($fn, "r");
+echo (string)fread($f, filesize($fn));
+fclose($f);
+?>
 
 </body>
 </html>
