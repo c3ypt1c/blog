@@ -1,4 +1,4 @@
-<!DOCTYPE html><?php include_once("config.php");?>
+<!DOCTYPE html><?php include_once("config.php"); include_once("password.php");?>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <html style="height: 100%;">
@@ -17,16 +17,22 @@
 		if (isset($_POST["posted"])) {
 			if ($_POST["posted"] == "true") {
 
-				$st = str_replace(htmlspecialchars("<br>"), "<br>", htmlspecialchars(str_replace("\n", "<br>", $_POST["content"])));
-				$st = $_POST["title"]."!,".$st."!,".$_POST["date"]."!,1";
+				if ($password == $_POST["password"]) {
 
-				$f = fopen("posts.csv", "a") or die("Unable to open file!");
-				fwrite($f, "\n". $st);
-				fclose($f);
+					$st = str_replace(htmlspecialchars("<br>"), "<br>", htmlspecialchars(str_replace("\n", "<br>", $_POST["content"])));
+					$st = $_POST["title"]."!,".$st."!,".$_POST["date"]."!,1";
 
-				exec("python3 getter.py");
+					$f = fopen("posts.csv", "a") or die("Unable to open file!");
+					fwrite($f, "\n". $st);
+					fclose($f);
 
-				echo "Written Successfully";
+					exec("python3 getter.py");
+
+					echo "Written Successfully";
+
+				} else {
+					echo "Wrong Password";
+				}
 
 			}
 		}
