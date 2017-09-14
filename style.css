@@ -63,12 +63,12 @@ div.footer {
 	margin-bottom: 0;
 }
 
-div.footer a {
+a {
 	color: #fff;
 	text-decoration: none;
 }
 
-div.footer a:hover {
+a:hover {
 	text-decoration: underline;
 }
 

@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<p style="top:0;right:0;position:absolute;"><a href="post.php">Post</a></p>
+
 <div class='title'><h1><?php echo $title;?></h1></div>
 <?php
 $fn = getcwd()."/inner.html";
