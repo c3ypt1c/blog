@@ -15,10 +15,23 @@
 	<p>
 	<?php
 		if (isset($_POST["posted"])) {
-			echo "has been posted";
+			if ($_POST["posted"] == "true") {
+
+				$st = str_replace(htmlspecialchars("<br>"), "<br>", htmlspecialchars(str_replace("\n", "<br>", $_POST["content"])));
+				$st = $_POST["title"]."!,".$st."!,".$_POST["date"]."!,1";
+
+				$f = fopen("posts.csv", "a") or die("Unable to open file!");
+				fwrite($f, "\n". $st);
+				fclose($f);
+
+				exec("python3 getter.py");
+
+				echo "Written Successfully";
+
+			}
 		}
 	?>
-	<form action="/action_page.php" method="post">
+	<form action="" method="post">
 		Password:<br>
 		<input type="password" name="password"><br>
 		Title:<br>

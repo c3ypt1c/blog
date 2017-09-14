@@ -1,7 +1,4 @@
-import sys
 import config
-
-argv = sys.argv[:]
 
 f = open ( "posts.csv", "rb" )
 fd= f.read().decode(config.enc.default)
@@ -21,4 +18,7 @@ for x in fd:
         
 html += "</div>"
 
-print ( html )
+f = open ( "inner.html", "wb" )
+f.write(html.encode(config.enc.default))
+f.close()
+del f

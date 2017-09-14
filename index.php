@@ -9,10 +9,13 @@
 <body>
 
 <div class='title'><h1><?php echo $title;?></h1></div>
+<?php
+$fn = getcwd()."/inner.html";
+$f = fopen($fn, "r");
+if (filesize($fn) == 0) exec("python3 getter.py");
+echo (string)fread($f, filesize($fn));
+fclose($f);
 
-<?php echo (string)exec("python3 getter.py");?>
-
-<?php 
 $fn = getcwd()."/footer.html";
 $f = fopen($fn, "r");
 echo (string)fread($f, filesize($fn));
