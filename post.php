@@ -20,12 +20,11 @@
 			if ($_POST["posted"] == "true") {
 
 				if ($password == $_POST["password"]) {
-
-					$st = str_replace(htmlspecialchars("<br>"), "<br>", htmlspecialchars(str_replace("\n", "<br>", $_POST["content"])));
+					$st = htmlspecialchars(str_replace("\n", "\n", $_POST["content"]));
 					$st = $_POST["title"]."!,".$st."!,".$_POST["date"]."!,1";
 
 					$f = fopen("posts.csv", "a") or die("Unable to open file!");
-					fwrite($f, "\n". $st);
+					fwrite($f, "?.". $st); //Ending old entery
 					fclose($f);
 
 					exec("python3 getter.py");

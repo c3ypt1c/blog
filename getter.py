@@ -3,13 +3,18 @@ import config
 f = open ( "posts.csv", "rb" )
 fd= f.read().decode(config.enc.default)
 f.close()
+    
 
-fd = fd.split("\n")
+fd = fd.split("?.")
 fd.reverse()
 html = "<div id='posts'>"
+data.replace("&lt;", "<")
+data.replace("&gt;", ">")
 
 for x in fd:
     data = x.split("!,")
+    for y in data:
+        
     if data[3] == "1":
         html += "<div class='content'>"
         html += "<div class='header'><p>" + data[0]
