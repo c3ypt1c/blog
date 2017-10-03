@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<p style="top:0;right:0;position:absolute;"><a href="">Go Back</a></p>
+<p style="top:0;right:0;position:absolute;"><a href="..">Go Back</a></p>
 
 <div class='title'><h1><?php echo $title;?></h1></div>
 

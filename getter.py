@@ -4,12 +4,10 @@ f = open ( "posts.csv", "rb" )
 fd= f.read().decode(config.enc.default)
 f.close()
     
-
+fd.replace("&lt;", "<").replace("&gt;", ">")
 fd = fd.split("?.")
 fd.reverse()
 html = "<div id='posts'>"
-data.replace("&lt;", "<")
-data.replace("&gt;", ">")
 
 for x in fd:
     data = x.split("!,")
