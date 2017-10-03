@@ -13,7 +13,6 @@ data.replace("&gt;", ">")
 
 for x in fd:
     data = x.split("!,")
-    for y in data:
         
     if data[3] == "1":
         html += "<div class='content'>"
